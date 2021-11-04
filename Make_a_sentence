@@ -1,0 +1,47 @@
+import random as r
+
+article = ['the', 'this', 'a', 'an', 'that', 'some']
+pro = ['single','plural']
+p = {'single':['He', 'She', 'It'], 'plural':['I','You','We','They']}
+verb = ['eat', 'drink', 'run', 'stand', 'sit', 'rest', 'sleep', 'dream', 'work', 'laugh', 'cry']
+conj = ['and', 'but', 'so']
+adv = ['happily', 'sadly', 'joyfully', 'peacefully', 'beaterly', 'eagerly']
+
+def get_pronoun(variable):
+  ind = pro[variable]
+  p1 = p[ind][r.randint(0,len(p[ind])-1)]
+  return(p1)
+
+def get_verb(variable):
+  k = verb[r.randint(0,len(verb) - 1)]
+  if variable == 0:
+    v = str(k) + 's'
+  else:
+    v = str(k)
+  return v
+
+def get_conj():
+  c = conj[r.randint(0,len(conj) - 1)]
+  return c
+
+def get_adv(variable):
+  a = adv[variable]
+  return a
+
+def main():
+  key1 = r.randint(0,1)
+  s1 = get_pronoun(key1)
+  s2 = get_verb(key1)
+  s3 = get_adv(r.randint(0,len(adv) - 1))
+  s4 = get_conj()
+  key2 = r.randint(0,1)
+  while key1 == key2:
+    key2 = r.randint(0,1)
+  S1 = get_pronoun(key2)
+  S2 = get_verb(key2)
+  S3 = get_adv(r.randint(0,len(adv) - 1))
+  while s3 == S3:
+    S3 = get_adv(r.randint(0,len(adv) - 1))
+  print(s1, s2, s3, s4, S1.lower(), S2, S3)
+
+main()
