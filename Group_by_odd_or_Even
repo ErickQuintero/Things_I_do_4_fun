@@ -1,0 +1,17 @@
+inp = [[1,2],[3,4],[5,6],[7,8],[9,0],[5,1,2]]
+out_even = []
+out_odd = []
+for l in range(0,len(inp)):
+  for num in inp[l]:
+    if num % 2 == 0:
+      if num in out_even:
+        pass
+      else:
+        out_even.append(num)
+    else:
+      if num in out_odd:
+        pass
+      else:
+        out_odd.append(num)
+outp = [out_odd,out_even]
+print(outp)
