@@ -1,0 +1,21 @@
+#Pizza cash register.
+#The program will output the correct price for a Pizza pie depending on size, toppins, and extras.
+
+print('Welcome to pizza "Whatever"')
+# Used lower() method to standardize user input
+a = input('What size (S, M, L)?').lower()
+b = input('Add Pepperoni (Y or N)?').lower()
+c = input('Extra Cheeze (Y or N)?').lower()
+d = '\nYour total bill is: $'
+
+# Use dictionaries to hold prices for size and toppings
+size_price = {'s':15, 'm':20, 'l':25}
+pep_price = {'y':3, 'n':0}
+cheez_price = {'y':1, 'n':0}
+
+# Create a list to index input values (this is my personal preference)
+order = [a,b,c]
+# Calculate the price by indexing the list as dictionary key and looking up the values
+total = size_price[order[0]] + pep_price[order[1]] + cheez_price[order[-1]]
+
+print(d, "{:.2f}".format(total))
